@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Get Data</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- <ion-header>
+  <ion-toolbar>
+     <ion-buttons slot="start">
+      <ion-menu-button>
+      </ion-menu-button>
+  </ion-buttons>
+  <ion-title>Get Data</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <ion-list>
+
+    <ion-item *ngFor="let user of result">
+      <ion-avatar slot="start">
+        <img [src]="user.avatar">
+      </ion-avatar>
+      <ion-label>
+        <ion-text>
+          <h2>{{user.email}}</h2>
+        </ion-text>
+        <ion-text color="medium">
+          <p>{{user.first_name}} {{user.last_name}}</p>
+        </ion-text>
+      </ion-label>
+    </ion-item>
+
+  </ion-list>
+  <div id="container">
+    <ion-button   (click)="NextPage($event)" shape="round">NextPage</ion-button> 
+    <ion-button   (click)="LogOut($event)" shape="round">LogOut</ion-button> 
+  </div>
+</ion-content>

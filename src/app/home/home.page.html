@@ -1,0 +1,64 @@
+<ion-content>
+ 
+    <form [formGroup]="authForm">
+      <div class="input-group">
+        <ion-item>
+          <ion-input type="text" placeholder="username" name="userName" formControlName="userName"></ion-input>
+        </ion-item>
+        <div class="error" *ngIf="authForm.controls.userName.hasError('required') && authForm.controls.userName.touched">
+          <span>UserName is required!</span>
+        </div>
+        <ion-item>
+          <ion-input type="password" placeholder="Password" name="password" formControlName="password"></ion-input>
+        </ion-item>
+        <div class="error"
+            *ngIf="authForm.controls.password.hasError('required') && authForm.controls.password.touched">
+            <span>Password is required.</span>
+        </div>
+      </div>
+
+    <ion-button type="submit" expand="block" [disabled]="!authForm.valid" (click)="Apicall($event)">Log in</ion-button>
+    <ion-button type="button" expand="block" color="light" fill="clear">Not yet a member? Sign up!
+    </ion-button>
+ 
+    <ion-button type="button" expand="block" color="tertiary" (click)="doGoogleLogin($event)">
+      <ion-icon name="logo-google" slot="start"></ion-icon>
+      Sign in with Google
+    </ion-button>
+    <ion-button type="button" expand="block" color="tertiary">
+      <ion-icon name="logo-apple" slot="start"></ion-icon>
+      Sign in with Apple
+    </ion-button>
+      <!-- <ion-row>
+        <ion-col>
+          <ion-list inset>
+            
+            <ion-item>
+              <ion-input type="text" placeholder="username" name="userName" formControlName="userName"></ion-input>
+            </ion-item>
+            <div class="error" *ngIf="authForm.controls.userName.hasError('required') && authForm.controls.userName.touched">
+              <p class="invalid-input">UserName is required!</p>
+            </div>
+            <ion-item>
+              <ion-input type="password" placeholder="Password" name="password" formControlName="password"></ion-input>
+            </ion-item>
+            <div class="error"
+            *ngIf="authForm.controls.password.hasError('required') && authForm.controls.password.touched">
+            <p class="invalid-input">Password is required.</p>
+            </div>
+          </ion-list>
+        </ion-col>
+      </ion-row> 
+      
+      <ion-row>
+        <div id="container">
+          <ion-button  [disabled]="!authForm.valid" (click)="Apicall($event)" shape="round">Login</ion-button> 
+        </div>
+         <ion-col class="signup-col">
+          <button ion-button class="submit-btn" full type="submit" [disabled]="!authForm.valid">Login</button>
+          <button ion-button class="register-btn" block clear (click)="createAccount()">Create New Account</button>
+        </ion-col> 
+      </ion-row>-->
+      
+    </form>
+</ion-content>
